@@ -58,13 +58,26 @@ The project utilized Python to calculate statistics like mean, standard deviatio
 
 **Data Visualization** 
 
+Receiver vs asset value
 ![Screenshot 2024-10-15 16 48 33](https://github.com/user-attachments/assets/c075a292-7363-4c8d-bfc8-5c00db6f8538)
 
+
+Asset value vs years
 ![Screenshot 2024-10-15 17 54 35](https://github.com/user-attachments/assets/dee56613-1d58-427e-b21a-2e693ebacd71)
 
+
+Status vs value
 ![Screenshot 2024-10-15 17 56 50](https://github.com/user-attachments/assets/d0f8280e-00d6-4fd2-9c9f-2dccc9ea83e7)
 
+
+Value x receiver x year matrix
 ![Screenshot 2024-10-15 17 56 56](https://github.com/user-attachments/assets/80ef14d4-6bb2-4108-8a96-7da35835271e)
+Value x receiver x year matrix
+
+
+
+
+**Contact me if you want a link to play around with the Power BI visual report**
 
 
 
