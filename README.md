@@ -75,6 +75,7 @@ Value x receiver x year matrix
 
 
 
+[Donwload the PDF report here](https://www.dropbox.com/scl/fi/h7efyepnd178spz3tjg4y/Activos-recuperados-apreendidos-e-arrestados.pdf?rlkey=ofsf02ck4icrjfeo2kav8dh6d&st=ylsonjdc&dl=0)
 
 **Contact me if you want a link to play around with the Power BI visual report**
 
