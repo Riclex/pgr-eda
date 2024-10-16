@@ -72,7 +72,6 @@ Status vs value
 
 Value x receiver x year matrix
 ![Screenshot 2024-10-15 17 56 56](https://github.com/user-attachments/assets/80ef14d4-6bb2-4108-8a96-7da35835271e)
-Value x receiver x year matrix
 
 
 
