@@ -71,7 +71,7 @@ Receiver/category
 ![Screenshot 2024-11-07 16 59 19](https://github.com/user-attachments/assets/29f3cf47-1484-495a-a4a2-e70e67c887d6)
 
 
-[Donwload the PDF report here](https://drive.google.com/file/d/16dPjCh4YoqFHE67aHk2JTipeYukb_f91/view?usp=sharing) (!!Portuguese)
+[Donwload the PDF report here](https://bit.ly/40GMOWK) (!!Portuguese)
 
 **Contact me if you want a link to play around with the Power BI visual report**
 
