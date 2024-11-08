@@ -4,20 +4,20 @@
 
 This project analyzes a real-world dataset about seized, recovered, and arrested assets related to Angola's fight against corruption campaign by [PGR](https://www.pgr.ao/senra), from 2019 to 2024.
 
-The data was extracted from a PDF published by [SENRA](https://www.senra.pgr.ao/) and compiled by [Pro Bono AO](https://probonoangola.org/).
+The data was extracted directly from the [SENRA website](https://www.senra.pgr.ao/).
 
 *Focus*: This analysis focuses solely on asset values, categorized into five currencies (USD, AOA, AUD, CHF, and EUR) and converted to USD for consistency.
 
 ## Data Acquisition and Cleaning
 
-While tools like pdfminer or PyPDF2 can be used for PDF extraction, Adobe Reader was chosen for this instance due to the presence of multiple currencies.
+The data was extracted using BeautifulSoup and a sample of the code can be seen under the name Webscrapping_sample.ipynb
+
 
 ### Original Data
 
-- 964 total assets
-
-- Categorized as "seized," "recovered," or "arrested"
-
+- 508 seized assets
+- 229 recovered assets
+- 146 arrested assets
 - Values in five currencies
 
 
@@ -27,8 +27,12 @@ While tools like pdfminer or PyPDF2 can be used for PDF extraction, Adobe Reader
 
 - Assigned a value of "0" to assets with "Aguarda Avaliação" (Awaiting Evaluation) status.
 
+- Dropped "Bens" column
+  
 - Removed duplicate headers and inconsistencies.
 
+- Removed accents and fixed values inconsistencies
+  
 - Transferred the cleaned data to a CSV file.
 
 - Performed further cleaning with Python.
@@ -40,12 +44,12 @@ While tools like pdfminer or PyPDF2 can be used for PDF extraction, Adobe Reader
 
 | **Original Name**   | **New Name**   |  **Description**                     |
 |---------------------|----------------|--------------------------------------|
-| .#                  |     asset      |  # of the asset                      |
-| Bens                |      --        |  name of the asset                   |
-| Valor               |     value      |  value of the asset                  |
-| Orgao que recebeu   |    receiver    | institution that received the asset  |
+| .#                  |     activo     |  # of the asset                      |
+| Bens                |   _dropped_    |  name of the asset                   |
+| Valor               |     valor      |  value of the asset                  |
+| Orgao que recebeu   |    receptor    | institution that received the asset  |
 | Situacao Actual     |     status     | status of the asset                  |
-| Ano                 |      year      |  year the asset was processed        |
+| Ano                 |      ano       |  year the asset was processed        |
 
 
 ### Exploratory Data Analysis (EDA)
@@ -58,24 +62,16 @@ The project utilized Python to calculate statistics like mean, standard deviatio
 
 **Data Visualization** 
 
-Receiver vs asset value
-![Screenshot 2024-10-15 16 48 33](https://github.com/user-attachments/assets/c075a292-7363-4c8d-bfc8-5c00db6f8538)
+![Screenshot 2024-11-07 16 59 35](https://github.com/user-attachments/assets/70a967ef-6d43-446c-96f5-346e16b898ac)
+
+Status/category
+![Screenshot 2024-11-07 16 58 56](https://github.com/user-attachments/assets/c5b80f64-8427-4960-bab6-07a44092d475)
+
+Receiver/category
+![Screenshot 2024-11-07 16 59 19](https://github.com/user-attachments/assets/29f3cf47-1484-495a-a4a2-e70e67c887d6)
 
 
-Asset value vs years
-![Screenshot 2024-10-15 17 54 35](https://github.com/user-attachments/assets/dee56613-1d58-427e-b21a-2e693ebacd71)
-
-
-Status vs value
-![Screenshot 2024-10-15 17 56 50](https://github.com/user-attachments/assets/d0f8280e-00d6-4fd2-9c9f-2dccc9ea83e7)
-
-
-Value x receiver x year matrix
-![Screenshot 2024-10-15 17 56 56](https://github.com/user-attachments/assets/80ef14d4-6bb2-4108-8a96-7da35835271e)
-
-
-
-[Donwload the PDF report here](https://www.dropbox.com/scl/fi/h7efyepnd178spz3tjg4y/Activos-recuperados-apreendidos-e-arrestados.pdf?rlkey=ofsf02ck4icrjfeo2kav8dh6d&st=ylsonjdc&dl=0)
+[Donwload the PDF report here](https://drive.google.com/file/d/16dPjCh4YoqFHE67aHk2JTipeYukb_f91/view?usp=sharing) (!!Portuguese)
 
 **Contact me if you want a link to play around with the Power BI visual report**
 
@@ -86,15 +82,10 @@ Value x receiver x year matrix
 
 |Statistic	        |   Value  	    | Top Receiver	         |   Top Status	                             | Year |
 |-------------------|---------------|------------------------|-------------------------------------------|------|
-|Mean	              |  $59 Billion	| Cofre Geral da Justica | à guarda do fiel depositário (in custody) | 2021 |
-|Standard Deviation |  $1 Trillion	|		                     |                                           |      |
+|Mean	              |  $59.5 Million| Cofre Geral da Justica | à guarda do fiel depositário (in custody) | 2021 |
+|Standard Deviation |  $1.1 Billion	|		                     |                                           |      |
 |Minimum Value      |  $0			      |                        |                                           | 2019 |
-|Maximum Value	    |  $23 Trillion	|		                     |                                           | 2024 |
-|Arrested Assets    |  $24 Billion	|		                     |                                           |      |
-|Seized Assets	    |  $23 Billion	|		                     |                                           |      |
-|Recovered Assets   |  $3 Billion   |                        |                                           |      |
-
-
+|Maximum Value	    |  $31 Billion	|		                     |                                           | 2024 |
 
 
 If you found this exploration of the data informative, and would like to see more in the future consider supporting my work! 
@@ -105,7 +96,6 @@ If you found this exploration of the data informative, and would like to see mor
 
 ### Tools and Technologies
 
-- Adobe Acrobat Reader
 - Microsoft Excel
 - Power BI
 - Python
@@ -115,9 +105,10 @@ If you found this exploration of the data informative, and would like to see mor
 
 ### Contributing:
 
-Future improvements may involve automating the data extraction process with an ETL pipeline directly fetching data from the official website. 
-Feel free to reach out with suggestions or improvements!
+~~Future improvements may involve automating the data extraction process with an ETL pipeline directly fetching data from the official website.~~
 
+Feel free to reach out with suggestions or improvements!
+ 
 
 
 
